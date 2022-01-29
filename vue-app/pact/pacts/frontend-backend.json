@@ -1,0 +1,83 @@
+{
+  "consumer": {
+    "name": "Frontend"
+  },
+  "provider": {
+    "name": "Backend"
+  },
+  "interactions": [
+    {
+      "description": "request for videos",
+      "providerState": "get video list",
+      "request": {
+        "method": "GET",
+        "path": "/videos"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=UTF-8"
+        },
+        "body": {
+          "data": [
+            {
+              "id": 1,
+              "videoAddress": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+              "coverImage": "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+              "hoverImage": "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+              "title": "The Best Video",
+              "viewCount": 1,
+              "publishDateInMonth": 1,
+              "ownerImage": "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+              "ownerName": "John Doe",
+              "description": "This is the best video ever. I hope you like it."
+            }
+          ]
+        },
+        "matchingRules": {
+          "$.body.data": {
+            "min": 1
+          },
+          "$.body.data[*].*": {
+            "match": "type"
+          },
+          "$.body.data[*].id": {
+            "match": "type"
+          },
+          "$.body.data[*].videoAddress": {
+            "match": "type"
+          },
+          "$.body.data[*].coverImage": {
+            "match": "type"
+          },
+          "$.body.data[*].hoverImage": {
+            "match": "type"
+          },
+          "$.body.data[*].title": {
+            "match": "type"
+          },
+          "$.body.data[*].viewCount": {
+            "match": "type"
+          },
+          "$.body.data[*].publishDateInMonth": {
+            "match": "type"
+          },
+          "$.body.data[*].ownerImage": {
+            "match": "type"
+          },
+          "$.body.data[*].ownerName": {
+            "match": "type"
+          },
+          "$.body.data[*].description": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
