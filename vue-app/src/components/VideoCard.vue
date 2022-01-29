@@ -43,10 +43,6 @@ export default {
 </script>
 
 <style>
-.video-item {
-  display: none;
-}
-
 .hover-image {
   display: none;
 }

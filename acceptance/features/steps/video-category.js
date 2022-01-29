@@ -71,11 +71,11 @@ When("User hovers {string} video", async function (videoName) {
     videoName
   );
 
-  await this.page.hover(`[data-id="${this.hoveredVideoId}"]`);
+  await this.page.hover(`[data-id="${this.hoveredVideoId}"] .cover-image`);
 });
 
 Then("User should see hovered image", async function () {
-  const selector = `[data-id="${this.hoveredVideoId}"] .hover-image`;
+  const selector = `[data-id="${this.hoveredVideoId}"] .cover-image`;
 
   await checkElementVisible.call(this, selector);
 });
